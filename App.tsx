@@ -33,7 +33,7 @@ const App: React.FC = () => {
         </div>
       </main>
       <footer className="text-center p-4 mt-8 text-sm text-slate-500">
-        <p>Powered by Google Gemini. Built for students, by AI.</p>
+        <p>Powered by Google Gemini AI API.</p>
       </footer>
     </div>
   );
