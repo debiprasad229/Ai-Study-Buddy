@@ -13,4 +13,4 @@ This contains everything you need to run your app locally.
    `npm run dev`
 
 ## Click to view my app
-https://ai-study-budy.netlify.app/
+https://ai-study-buddy-plum.vercel.app/
