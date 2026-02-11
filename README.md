@@ -11,6 +11,6 @@ This contains everything you need to run your app locally.
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+4. ## Click to view my app
+https://ai-study-buddy-plum.vercel.app/
 
-## Click to view my app
-https://ai-study-budy.netlify.app/
