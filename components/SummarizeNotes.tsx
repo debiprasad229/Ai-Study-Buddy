@@ -1,5 +1,6 @@
 
 import React, { useState, useCallback } from 'react';
+import ReactMarkdown from 'react-markdown';
 import { summarizeText } from '../services/geminiService';
 import Card from './common/Card';
 import LoadingSpinner from './common/LoadingSpinner';
@@ -56,7 +57,7 @@ const SummarizeNotes: React.FC = () => {
       {summary && (
         <div className="mt-6 prose prose-slate dark:prose-invert max-w-none">
           <h3 className="text-lg font-semibold border-b pb-2 mb-4 dark:border-slate-600">Summary</h3>
-          <div dangerouslySetInnerHTML={{ __html: summary.replace(/\n/g, '<br />') }} />
+          <ReactMarkdown>{summary}</ReactMarkdown>
         </div>
       )}
     </Card>
