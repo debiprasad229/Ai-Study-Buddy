@@ -6,7 +6,7 @@ export interface GeminiRequestBody {
   payload: string;
 }
 
-const MODEL = "gemini-2.0-flash";
+const MODEL = "gemini-3.1-flash-lite";
 
 function getApiKey(): string {
   const key = process.env.GEMINI_API_KEY || process.env.API_KEY;
