@@ -39,16 +39,22 @@ const SummarizeNotes: React.FC = () => {
           value={notes}
           onChange={(e) => setNotes(e.target.value)}
           placeholder="Paste your notes here..."
-          className="w-full h-48 px-4 py-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          maxLength={10000}
+          className="w-full h-48 px-4 py-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 font-mono text-sm"
           disabled={isLoading}
         />
-        <button
-          type="submit"
-          disabled={isLoading || !notes.trim()}
-          className="mt-2 px-6 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 disabled:bg-indigo-400 disabled:cursor-not-allowed transition-colors"
-        >
-          {isLoading ? 'Summarizing...' : 'Summarize'}
-        </button>
+        <div className="flex items-center justify-between mt-2">
+          <span className="text-xs text-slate-500">
+            {notes.length.toLocaleString()} / 10,000 characters
+          </span>
+          <button
+            type="submit"
+            disabled={isLoading || !notes.trim()}
+            className="px-6 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 disabled:bg-indigo-400 disabled:cursor-not-allowed transition-colors"
+          >
+            {isLoading ? 'Summarizing...' : 'Summarize'}
+          </button>
+        </div>
       </form>
 
       {isLoading && <LoadingSpinner />}

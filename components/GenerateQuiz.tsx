@@ -81,13 +81,14 @@ const GenerateQuiz: React.FC = () => {
               value={topic}
               onChange={(e) => setTopic(e.target.value)}
               placeholder="e.g., The French Revolution, Cell Biology"
+              maxLength={3000}
               className="flex-grow w-full px-4 py-2 bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
               disabled={isLoading}
             />
             <button
               onClick={handleGenerateQuiz}
               disabled={isLoading || !topic.trim()}
-              className="px-6 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 disabled:bg-indigo-400 disabled:cursor-not-allowed transition-colors"
+              className="px-6 py-2 bg-indigo-600 text-white font-semibold rounded-md hover:bg-indigo-700 disabled:bg-indigo-400 disabled:cursor-not-allowed transition-colors whitespace-nowrap"
             >
               {isLoading ? 'Generating...' : 'Generate Quiz'}
             </button>
